@@ -43,7 +43,7 @@ To run this project locally, follow these steps:
 
 ## Usage
 
-Once the development server is running, open your browser and go to `http://localhost:3000` to view the app.
+Once the development server is running, open your browser and go to `http://localhost:5175` to view the app.
 
 ## Contributing
 
