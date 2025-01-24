@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF, useAnimations } from "@react-three/dre
 
 import CanvasLoader from "../Loader";
 
-const Computers = () => {
+const Robot = () => {
   const { scene, animations } = useGLTF("./mech_drone/scene.gltf");
   const { actions } = useAnimations(animations, scene);
   const [rotation, setRotation] = useState([0, 0, 0]);
@@ -38,7 +38,7 @@ const Computers = () => {
   );
 };
 
-const ComputersCanvas = () => {
+const RobotCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ const ComputersCanvas = () => {
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
-          <Computers isMobile={isMobile} />
+          <Robot isMobile={isMobile} />
         </Suspense>
         <Preload all />
       </Canvas>
@@ -76,4 +76,4 @@ const ComputersCanvas = () => {
   );
 };
 
-export default ComputersCanvas;
+export default RobotCanvas;
