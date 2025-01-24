@@ -12,7 +12,7 @@ const Resume = () => {
         <div className='resume-content'>
           <h1 className={`${styles.sectionHeadText} text-center mb-4`}>My Resume</h1>
           <p className='text-primary text-[17px] text-center mb-6 leading-[30px]'>
-            You can view and download my resume below. It highlights my experience, skills, and projects as a frontend developer.
+            You can view and download my resume below. It highlights my experience, skills, and projects as a software developer.
           </p>
 
           <div className='w-full h-[500px] mb-6'>

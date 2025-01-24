@@ -1,4 +1,3 @@
-// import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { RoBotCanvas, ComputersCanvas } from "./canvas";
 
@@ -18,7 +17,7 @@ const Hero = () => {
             Hi, I'm <span className='text-[#FF8C00]'>Nishanth</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Results-driven Software Developer with over 2+ years of experience
+            Results-driven Software Developer Engineer with over 3+ years of experience
             specializing in React.js and modern web technologies
           </p>
         </div>

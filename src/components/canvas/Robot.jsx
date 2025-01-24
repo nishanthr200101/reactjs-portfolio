@@ -57,7 +57,7 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <div style={{ width: '100%', height: '40vh' }}> {/* Full width and height of viewport */}
+    <div style={{ width: '100%', height: '40vh' }}>
       <Canvas
         camera={{ position: [20, 3, 5], fov: 25 }}
         gl={{ preserveDrawingBuffer: true }}

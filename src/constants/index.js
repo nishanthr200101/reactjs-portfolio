@@ -19,6 +19,9 @@ import {
   hrlytics,
   portfolio,
   threejs,
+  studio_diseno,
+  terraform_git,
+  socket_node,
 } from "../assets";
 
 export const navLinks = [
@@ -42,11 +45,11 @@ const services = [
     icon: web, 
   },
   {
-    title: "React.js Developer",
+    title: "Software Engineer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Fullstack Developer",
     icon: backend,
   },
   {
@@ -129,7 +132,7 @@ const experiences = [
     company_name: "HRLytics",
     icon: hrlytics,
     iconBg: "#E6DEDD",
-    date: "July 2022 - Present",
+    date: "July 2022 - Sept 2024",
     points: [
       "Developed and maintained dynamic frontend interfaces using React.js, improving the user experience and responsiveness of the platform",
       "Developed and integrated modular child React projects with a main application, reducing codebase size by 30% and improving loading times by 20%",
@@ -138,6 +141,16 @@ const experiences = [
       "Designed and implemented efficient state management solutions using Redux and Context API for scalable application development",
       "Contributed to the deployment and monitoring of the frontend applications, ensuring high availability and prompt issue resolution",
       "Mentored junior developers, guiding them through modern frontend technologies and best practices"
+    ],
+  },
+  {
+    title: "Fullstack Developer",
+    company_name: "Studio Diseno",
+    icon: studio_diseno,
+    iconBg: "#E6DEDD",
+    date: "Sept 2024 - Present",
+    points: [
+      "Will Update Soon...",
     ],
   },
 ];
@@ -173,7 +186,7 @@ const projects = [
   {
     name: "My Portfolio",
     description:
-      "A personal portfolio showcasing my skills, projects, and experiences as a frontend developer. It features interactive design elements, responsive layouts, and an optimized user experience, providing visitors with a comprehensive overview of my work and capabilities.",
+      "A portfolio showcasing skills, projects and experiences as a frontend developer with interactive design elements.",
     tags: [
       {
         name: "react",
@@ -185,50 +198,38 @@ const projects = [
       },
     ],
     image: portfolio,
-    source_code_link: "https://github.com/nishanthr200101/portfolio",
+    source_code_link: "https://github.com/nishanthr200101/reactjs-portfolio",
   },
-  // {
-  //   name: "Job IT",
-  //   description:
-  //     "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-  //   tags: [
-  //     {
-  //       name: "react",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "restapi",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "scss",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: jobit,
-  //   source_code_link: "https://github.com/",
-  // },
-  // {
-  //   name: "Trip Guide",
-  //   description:
-  //     "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-  //   tags: [
-  //     {
-  //       name: "nextjs",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "supabase",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "css",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: tripguide,
-  //   source_code_link: "https://github.com/",
-  // },
+  {
+    name: "Github Repo creation",
+    description:
+      "An automation tool for creating GitHub repositories, streamlining the setup process for new projects.",
+    tags: [
+      {
+        name: "Terraform",
+        color: "green-text-gradient",
+      },
+    ],
+    image: terraform_git,
+    source_code_link: "https://github.com/nishanthr200101/terraform-git",
+  },
+  {
+    name: "Socket Chat",
+    description:
+      "A chat application built with React and Node.js, enabling seamless communication between users.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "node.js",
+        color: "green-text-gradient",
+      },
+    ],
+    image: socket_node,
+    source_code_link: "https://github.com/nishanthr200101/chat-socket",
+  },
 ];
 
 export { services, technologies, experiences, testimonials, projects };

@@ -22,10 +22,13 @@ import threejs from "./tech/threejs.png";
 
 import amphisoft from "./company/amphisoft.jpeg";
 import hrlytics from "./company/hrlytics.jpeg";
+import studio_diseno from "./company/studio_diseno.jpeg";
 
 import resumepreview from "./resume/resumenish.pdf";
 
-import portfolio from "./portfolio.png";
+import portfolio from "./projects/portfolio.png";
+import terraform_git from "./projects/terraform-git.jpg";
+import socket_node from "./projects/socket_node.jpg";
 
 export {
   logo,
@@ -52,4 +55,7 @@ export {
   hrlytics,
   portfolio,
   resumepreview,
+  studio_diseno,
+  terraform_git,
+  socket_node,
 };
