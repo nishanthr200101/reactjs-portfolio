@@ -19,6 +19,9 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.png";
+import postgresql from "./tech/postgresql.png";
+import next_js from "./tech/next_js.svg";
+import nest_js from "./tech/nest_js.png";
 
 import amphisoft from "./company/amphisoft.jpeg";
 import hrlytics from "./company/hrlytics.jpeg";
@@ -44,6 +47,9 @@ export {
   git,
   html,
   javascript,
+  postgresql,
+  next_js,
+  nest_js,
   mongodb,
   nodejs,
   reactjs,
