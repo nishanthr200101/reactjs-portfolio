@@ -89,7 +89,7 @@ const technologies = [
   },
   {
     name: "Node JS",
-    icon: nodejs,
+    icon: nest_js,
   },
   {
     name: "Git",
