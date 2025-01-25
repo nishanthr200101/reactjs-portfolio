@@ -19,6 +19,9 @@ import {
   hrlytics,
   portfolio,
   threejs,
+  postgresql,
+  next_js,
+  nest_js,
   studio_diseno,
   terraform_git,
   socket_node,
@@ -77,40 +80,44 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
+    name: "Next JS",
+    icon: next_js,
   },
   {
     name: "Node JS",
     icon: nodejs,
   },
   {
+    name: "Node JS",
+    icon: nodejs,
+  },
+  {
+    name: "Git",
+    icon: git,
+  },
+  {
+    name: "Postgre SQL",
+    icon: postgresql,
+  },
+  {
     name: "MongoDB",
     icon: mongodb,
   },
   {
-    name: "Three JS",
-    icon: threejs,
+    name: "TypeScript",
+    icon: typescript,
   },
   {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
+    name: "Docker",
     icon: docker,
+  },
+  {
+    name: "Redux Toolkit",
+    icon: redux,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
   },
 ];
 
