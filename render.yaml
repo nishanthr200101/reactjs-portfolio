@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: my-portfolio-app
+    env: static
+    buildCommand: npm run build
+    publishDir: build
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 18.0.0
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /
+    buildFilter:
+      paths:
+        - src/**
+        - public/**
+        - package.json
+        - package-lock.json
+    branches:
+      - name: main
+        environment: production
+      - name: staging
+        environment: staging
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-XSS-Protection
+        value: 1; mode=block
+    cors:
+      allowOrigins:
+        - name: localhost
+          value: http://localhost:3000
+        - name: production
+          value: https://your-domain.com
+    sslRedirect: true
