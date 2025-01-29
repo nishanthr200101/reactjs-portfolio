@@ -4,7 +4,7 @@ Welcome to my portfolio app! This application showcases my projects, skills, and
 
 ## Live Preview
 
-You can view the live version of my portfolio at [https://portfolio. nishanthr. kesug. com/](https://portfolio.nishanthr.kesug.com/).
+You can view the live version of my portfolio at [https://portfolio.nishanthr.kesug.com/](https://portfolio.nishanthr.kesug.com/).
 
 ## Features
 
