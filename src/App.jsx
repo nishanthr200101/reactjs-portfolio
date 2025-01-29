@@ -7,6 +7,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className='relative z-0 bg-primary'>
+        deploy 1
         <div className='bg-hero-pattern bg-fixed bg-no-repeat bg-center'>
           <Navbar />
           <Hero />
