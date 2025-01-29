@@ -4,7 +4,7 @@ Welcome to my portfolio app! This application showcases my projects, skills, and
 
 ## Live Preview
 
-You can view the live version of my portfolio at [https://reactjs-portfolio-ten.vercel.app/](https://reactjs-portfolio-ten.vercel.app/).
+You can view the live version of my portfolio at [https://reactjs-portfolio-ten.vercel.app/](https://portfolio.nishanthr.kesug.com/).
 
 ## Features
 
