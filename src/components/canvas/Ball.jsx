@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   Decal,
@@ -10,7 +10,7 @@ import {
 
 import CanvasLoader from "../Loader";
 
-const Ball = ({imgUrl}) => {
+const Ball = ({ imgUrl }) => {
   const [decal] = useTexture([imgUrl]);
 
   return (
@@ -37,18 +37,43 @@ const Ball = ({imgUrl}) => {
   );
 };
 
+const isWebGLAvailable = () => {
+  try {
+    const canvas = document.createElement("canvas");
+    return !!(
+      window.WebGLRenderingContext &&
+      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+    );
+  } catch {
+    return false;
+  }
+};
+
 const BallCanvas = ({ icon }) => {
+  const [webGL, setWebGL] = useState(true);
+
+  useEffect(() => {
+    setWebGL(isWebGLAvailable());
+  }, []);
+
+  if (!webGL) {
+    return (
+      <div className='w-full h-full flex items-center justify-center'>
+        <img src={icon} alt='technology' className='w-16 h-16 object-contain' />
+      </div>
+    );
+  }
+
   return (
     <Canvas
       frameloop='demand'
-      dpr={[1, 2]}
+      dpr={[1, 1.5]}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );

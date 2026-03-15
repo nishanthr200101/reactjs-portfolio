@@ -3,7 +3,7 @@ services:
     name: my-portfolio-app
     env: static
     buildCommand: npm run build
-    publishDir: build
+    publishDir: dist
     autoDeploy: true
     envVars:
       - key: NODE_VERSION
@@ -37,5 +37,5 @@ services:
         - name: localhost
           value: http://localhost:3000
         - name: production
-          value: https://your-domain.com
+          value: https://my-portfolio-app.onrender.com
     sslRedirect: true

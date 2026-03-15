@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { api } from "../utils/api";
 
 const Contact = () => {
   const formRef = useRef();
@@ -30,6 +31,15 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+
+    // Save to DB (fire-and-forget — don't block the EmailJS flow)
+    if (import.meta.env.VITE_API_BASE_URL) {
+      api.post("/messages", {
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      }).catch(() => {}); // silently fail — API may be sleeping
+    }
 
     emailjs
       .send(

@@ -1,62 +1,75 @@
-# My Portfolio App
+# Nishanth R — 3D Portfolio
 
-Welcome to my portfolio app! This application showcases my projects, skills, and experiences as a developer. It is built using React and Three.js, providing an interactive and visually appealing experience.
+An interactive 3D portfolio built with React, Vite, Three.js, and Tailwind CSS. Features live experience data from a backend API, dynamic theme switching, and an admin panel.
 
-## Live Preview
+**Live:** [https://portfolio.nishanthr.kesug.com/](https://portfolio.nishanthr.kesug.com/)
 
-You can view the live version of my portfolio at [https://portfolio.nishanthr.kesug.com/](https://portfolio.nishanthr.kesug.com/).
+## Tech Stack
+
+- **React 18** + **Vite**
+- **Three.js** / **React Three Fiber** / **Drei** — 3D models (Robot, Desktop PC, Earth, Stars)
+- **Tailwind CSS** — CSS variable-based theming (4 color themes)
+- **Framer Motion** — animations
+- **EmailJS** — contact form emails
+- **React Router v6** — routing + `/admin` panel
 
 ## Features
 
-- **Interactive 3D Models**: Experience my projects in a 3D environment using Three.js.
-- **Responsive Design**: The app is fully responsive and works seamlessly on both desktop and mobile devices.
-- **Project Showcase**: Browse through my projects with detailed descriptions and links to live demos and source code.
-- **About Me Section**: Learn more about my background, skills, and interests.
+- 4 color themes (Orange, Blue, Purple, Green) — persists in localStorage, default set from API
+- Experience timeline fetches live from backend API (falls back to local data if API is sleeping)
+- Resume PDF served from Cloudinary CDN (falls back to local PDF)
+- Contact form dual-writes to DB + sends email via EmailJS
+- Admin panel at `/admin` — manage messages, experiences, resume, and default theme
 
-## Technologies Used
+## Local Development
 
-- **React**: A JavaScript library for building user interfaces.
-- **Three.js**: A JavaScript library for creating 3D graphics in the browser.
-- **React Three Fiber**: A React renderer for Three.js.
-- **Drei**: A helper library for React Three Fiber that provides useful abstractions.
+```bash
+# 1. Install dependencies
+npm install
 
-## Installation
+# 2. Create .env
+cp .env.example .env
+# Fill in VITE_EMAILJS_* and VITE_API_BASE_URL
 
-To run this project locally, follow these steps:
+# 3. Run dev server → http://localhost:5173
+npm run dev
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/nishanthr200101/reactjs-portfolio
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd reactjs-portfolio
-   ```
-3. Install the dependencies:
-   ```bash
-   yarn install
-   ```
-4. Start the development server:
-   ```bash
-   yarn start
-   ```
+# 4. Build for production
+npm run build   # outputs to dist/
+```
 
-## Usage
+## Environment Variables
 
-Once the development server is running, open your browser and go to `http://localhost:5175` to view the app.
+| Variable | Description |
+|---|---|
+| `VITE_EMAILJS_SERVICE_ID` | EmailJS service ID |
+| `VITE_EMAILJS_TEMPLATE_ID` | EmailJS template ID |
+| `VITE_EMAILJS_PUBLIC_KEY` | EmailJS public key |
+| `VITE_API_BASE_URL` | Backend API URL (e.g. `https://portfolio-api.onrender.com`) |
 
-## Contributing
+## Admin Panel
 
-If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Any contributions are welcome!
+Visit `/admin/login` with your seeded admin credentials.
 
-## License
+| Route | Purpose |
+|---|---|
+| `/admin/messages` | View, mark-read, delete contact messages |
+| `/admin/experiences` | Add / edit / delete work experience entries |
+| `/admin/resume` | Upload a new PDF resume to Cloudinary |
+| `/admin/settings` | Change the default site color theme |
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+## Deployment (Render)
+
+Deployed as a **static site** on Render.
+
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Add all `VITE_*` env vars in the Render dashboard
+
+## Backend
+
+The API lives in `../portfolio-api/`. See its README for setup instructions.
 
 ## Contact
 
-For any inquiries or feedback, please reach out to me at [nishanthr20010101@gmail.com](mailto:nishanthr20010101.com).
-
----
-
-Thank you for visiting my portfolio!
+[nishanthr20010101@gmail.com](mailto:nishanthr20010101@gmail.com) | [LinkedIn](https://www.linkedin.com/in/nishanth-r-a70720209/)

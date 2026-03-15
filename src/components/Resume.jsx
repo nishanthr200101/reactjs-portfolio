@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { styles } from '../styles'; // Assuming you have defined styles
-import { resumepreview } from '../assets'; // Your PDF file should be here
+import { styles } from '../styles';
+import { resumepreview } from '../assets';
 import { fadeIn } from '../utils/motion';
 
 const Resume = () => {
+  const [resumeUrl, setResumeUrl] = useState(null);
+
+  useEffect(() => {
+    const apiBase = import.meta.env.VITE_API_BASE_URL;
+    if (!apiBase) return;
+
+    fetch(`${apiBase}/settings/public`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data?.resumeUrl) setResumeUrl(data.resumeUrl);
+      })
+      .catch(() => {}); // fall back to local PDF
+  }, []);
+
+  const src = resumeUrl || resumepreview;
+
   return (
     <motion.div variants={fadeIn("up", "spring", 0.3, 0.75)}>
       <div className='bg-tertiary p-8 rounded-2xl w-full sm:w-[600px] mx-auto shadow-lg'>
@@ -17,7 +33,7 @@ const Resume = () => {
 
           <div className='w-full h-[500px] mb-6'>
             <iframe
-              src={resumepreview}
+              src={src}
               title='My Resume'
               width='100%'
               height='100%'
@@ -26,7 +42,7 @@ const Resume = () => {
           </div>
 
           <a
-            href={resumepreview}
+            href={src}
             download="Nishanth_Resume.pdf"
             className='bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors text-center block w-full'
           >

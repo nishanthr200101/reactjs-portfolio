@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo } from "../assets";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -54,7 +55,9 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <div className='hidden sm:flex items-center gap-6'>
+        <ThemeSwitcher />
+        <ul className='list-none flex flex-row gap-10'>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -67,6 +70,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        </div>
       </div>
     </div>
   );

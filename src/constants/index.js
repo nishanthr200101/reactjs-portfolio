@@ -121,47 +121,6 @@ const technologies = [
   },
 ];
 
-const experiences = [
-  {
-    title: "Product Engineer",
-    company_name: "Amhpisoft Technologies",
-    icon: amphisoft,
-    iconBg: "#383E56",
-    date: "December 2021 - June 2022",
-    points: [
-      "Developed and maintained college websites, focusing on responsive design and user engagement",
-      "Created mini-games for children using Konva and Three.js, ensuring an interactive and engaging experience",
-      "Collaborated with cross-functional teams to meet project deadlines and deliver high-quality products",
-    ],
-  },
-  {
-    title: "Software Development Engineer",
-    company_name: "HRLytics",
-    icon: hrlytics,
-    iconBg: "#E6DEDD",
-    date: "July 2022 - Sept 2024",
-    points: [
-      "Developed and maintained dynamic frontend interfaces using React.js, improving the user experience and responsiveness of the platform",
-      "Developed and integrated modular child React projects with a main application, reducing codebase size by 30% and improving loading times by 20%",
-      "Integrated RESTful APIs and optimized frontend data handling to deliver real-time insights and features",
-      "Collaborated closely with backend and testing teams to ensure seamless integration and accurate implementation of features",
-      "Designed and implemented efficient state management solutions using Redux and Context API for scalable application development",
-      "Contributed to the deployment and monitoring of the frontend applications, ensuring high availability and prompt issue resolution",
-      "Mentored junior developers, guiding them through modern frontend technologies and best practices"
-    ],
-  },
-  {
-    title: "Fullstack Developer",
-    company_name: "Studio Diseno",
-    icon: studio_diseno,
-    iconBg: "#E6DEDD",
-    date: "Sept 2024 - Present",
-    points: [
-      "Will Update Soon...",
-    ],
-  },
-];
-
 const testimonials = [
   {
     testimonial:

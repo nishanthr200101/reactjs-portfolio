@@ -4,6 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* === Default theme (orange) === */
+:root {
+  --color-primary: #1c1001;
+  --color-secondary: #b86704;
+  --color-tertiary: #bf6d08;
+}
+
+:root[data-theme="blue"] {
+  --color-primary: #0f172a;
+  --color-secondary: #3b82f6;
+  --color-tertiary: #2563eb;
+}
+
+:root[data-theme="purple"] {
+  --color-primary: #1e1b4b;
+  --color-secondary: #8b5cf6;
+  --color-tertiary: #7c3aed;
+}
+
+:root[data-theme="green"] {
+  --color-primary: #052e16;
+  --color-secondary: #22c55e;
+  --color-tertiary: #16a34a;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -34,28 +59,28 @@
 }
 
 .violet-gradient {
-  background: #FF8C00;
-  background: linear-gradient(-90deg, #FF8C00 0%, rgba(60, 51, 80, 0) 100%);
+  background: var(--color-secondary);
+  background: linear-gradient(-90deg, var(--color-secondary) 0%, rgba(60, 51, 80, 0) 100%);
   background: -webkit-linear-gradient(
     -90deg,
-    #FF8C00 0%,
+    var(--color-secondary) 0%,
     rgba(60, 51, 80, 0) 100%
   );
 }
 .orange-gradient {
-  background: #FF8C00;
-  background: linear-gradient(-90deg, #FF8C00 0%, rgba(255, 140, 0, 0) 100%);
+  background: var(--color-secondary);
+  background: linear-gradient(-90deg, var(--color-secondary) 0%, rgba(255, 140, 0, 0) 100%);
   background: -webkit-linear-gradient(
     -90deg,
-    #FF8C00 0%,
+    var(--color-secondary) 0%,
     rgba(255, 140, 0, 0) 100%
   );
 }
 
 .orange-white-gradient {
-  background: "#FF8C00"; /* Fallback for older browsers */
-  background: linear-gradient(90.13deg, #FF8C00 1.9%, #ffffff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #FF8C00 1.9%, #ffffff 97.5%);
+  background: var(--color-secondary);
+  background: linear-gradient(90.13deg, var(--color-secondary) 1.9%, #ffffff 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, var(--color-secondary) 1.9%, #ffffff 97.5%);
 }
 
 .orange-text-gradient {
