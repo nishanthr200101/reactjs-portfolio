@@ -24,6 +24,7 @@ const ICON_MAP = {
   studio_diseno,
 };
 
+
 const ExperienceCard = ({ experience }) => {
   // Support both local (icon = imported image) and API (icon_key = string) formats
   const iconSrc = experience.icon || ICON_MAP[experience.icon_key];
