@@ -38,7 +38,7 @@ const BallCanvas = ({ icon }) => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      ([entry]) => { setVisible(entry.isIntersecting); },
       { threshold: 0.1 }
     );
     if (containerRef.current) observer.observe(containerRef.current);
