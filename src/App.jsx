@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 import Resume from "./components/Resume";
+import Chatbot from "./components/Chatbot";
 import { ThemeProvider } from "./context/ThemeContext";
 import AdminLayout from "./components/admin/AdminLayout";
 import AdminLogin from "./components/admin/AdminLogin";
@@ -25,6 +26,7 @@ const Portfolio = () => (
       <StarsCanvas />
     </div>
     <Resume />
+    <Chatbot />
   </div>
 );
 
