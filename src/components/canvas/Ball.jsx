@@ -1,13 +1,6 @@
-import React, { Suspense, useState, useEffect } from "react";
+import React, { Suspense, useRef, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import {
-  Decal,
-  Float,
-  OrbitControls,
-  Preload,
-  useTexture,
-} from "@react-three/drei";
-
+import { Decal, Float, OrbitControls, Preload, useTexture } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Ball = ({ imgUrl }) => {
@@ -37,45 +30,37 @@ const Ball = ({ imgUrl }) => {
   );
 };
 
-const isWebGLAvailable = () => {
-  try {
-    const canvas = document.createElement("canvas");
-    return !!(
-      window.WebGLRenderingContext &&
-      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
-    );
-  } catch {
-    return false;
-  }
-};
-
+// Only mount the Canvas (and create a WebGL context) when the ball
+// is actually visible in the viewport — prevents context exhaustion
 const BallCanvas = ({ icon }) => {
-  const [webGL, setWebGL] = useState(true);
+  const containerRef = useRef(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setWebGL(isWebGLAvailable());
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.1 }
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
   }, []);
 
-  if (!webGL) {
-    return (
-      <div className='w-full h-full flex items-center justify-center'>
-        <img src={icon} alt='technology' className='w-16 h-16 object-contain' />
-      </div>
-    );
-  }
-
   return (
-    <Canvas
-      frameloop='demand'
-      dpr={[1, 1.5]}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
-        <Ball imgUrl={icon} />
-      </Suspense>
-      <Preload all />
-    </Canvas>
+    <div ref={containerRef} style={{ width: "100%", height: "100%" }}>
+      {visible && (
+        <Canvas
+          frameloop='demand'
+          dpr={1}
+          gl={{ powerPreference: "low-power", antialias: false, preserveDrawingBuffer: false }}
+        >
+          <Suspense fallback={<CanvasLoader />}>
+            <OrbitControls enableZoom={false} />
+            <Ball imgUrl={icon} />
+          </Suspense>
+          <Preload all />
+        </Canvas>
+      )}
+    </div>
   );
 };
 
