@@ -14,10 +14,12 @@ const Robot = () => {
       actions["Take 001"]?.play();
     }
     scene.traverse((object) => {
-      if (object.isMesh) {
-        object.material.color.set("#FF8C00");
-        object.material.metalness = 0.5;
-        object.material.roughness = 0.5;
+      if (object.isMesh && object.material) {
+        try {
+          if (object.material.color) object.material.color.set("#FF8C00");
+          if ("metalness" in object.material) object.material.metalness = 0.5;
+          if ("roughness" in object.material) object.material.roughness = 0.5;
+        } catch (_) {}
       }
     });
   }, [actions, scene]);
